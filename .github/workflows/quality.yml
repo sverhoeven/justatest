@@ -5,10 +5,12 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
+env:
+  SONAR_TOKEN_AVAILABLE: ${{ secrets.SONAR_TOKEN }}
 jobs:
   sonarcloud:
     name: SonarCloud
-    if: ${{ secrets.SONAR_TOKEN }}
+    if: env.SONAR_TOKEN_AVAILABLE
     runs-on: ubuntu-latest
     steps:
       - name: Hello
