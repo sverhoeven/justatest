@@ -10,7 +10,7 @@ env:
 jobs:
   sonarcloud:
     name: SonarCloud
-    if: env.SONAR_TOKEN_AVAILABLE
+    if: ${{ env.SONAR_TOKEN_AVAILABLE }}
     runs-on: ubuntu-latest
     steps:
       - name: Hello
