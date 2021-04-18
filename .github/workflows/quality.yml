@@ -8,12 +8,16 @@ on:
 jobs:
   sonarcloud:
     name: SonarCloud
-    env:
-      SONAR_TOKEN_AVAILABLE: ${{ secrets.SONAR_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - name: Hello
         run: echo Hello
+      - name: Detect fork
+        uses: svrooij/secret-gate-action@v1
+        with:
+          inputsToCheck: 'SONAR_TOKEN'
+          failOnMissing: 'true'
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Sssh
-        if: ${{ env.SONAR_TOKEN_AVAILABLE }}
         run: echo ${{ secrets.SONAR_TOKEN }}
