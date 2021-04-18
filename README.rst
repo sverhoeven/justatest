@@ -18,7 +18,6 @@ To install justatest, do:
   cd justatest
   pip3 install .
 
-
 Run tests (including coverage) with:
 
 .. code-block:: console
