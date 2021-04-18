@@ -5,15 +5,15 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
-env:
-  SONAR_TOKEN_AVAILABLE: ${{ secrets.SONAR_TOKEN }}
 jobs:
   sonarcloud:
     name: SonarCloud
-    if: ${{ env.SONAR_TOKEN_AVAILABLE }}
+    env:
+      SONAR_TOKEN_AVAILABLE: ${{ secrets.SONAR_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - name: Hello
         run: echo Hello
       - name: Sssh
+        if: ${{ env.SONAR_TOKEN_AVAILABLE }}
         run: echo ${{ secrets.SONAR_TOKEN }}
