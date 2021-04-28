@@ -11,5 +11,11 @@ jobs:
         with:
           filename: .github/next_steps/01_sonarcloud_integration.md
         id: sonarcloud
-      - run: 'echo Created issue number ${{ steps.sonarcloud.outputs.number }}'
-      - run: 'echo Created ${{ steps.sonarcloud.outputs.url }}'
+      - name: List created issues
+        run: |
+          echo 'Created a number issues that must be completed to have fully working Python package'
+	  echo '- ${{ steps.sonarcloud.outputs.url }}'
+	  echo '- ${{ steps.sonarcloud.outputs.url }}'
+	  echo '- ${{ steps.sonarcloud.outputs.url }}'
+	  echo '- ${{ steps.sonarcloud.outputs.url }}'
+	  echo '- ${{ steps.sonarcloud.outputs.url }}'
