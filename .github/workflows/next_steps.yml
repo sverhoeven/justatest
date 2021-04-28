@@ -13,9 +13,5 @@ jobs:
         id: sonarcloud
       - name: List created issues
         run: |
-          echo 'Created a number issues that must be completed to have fully working Python package'
-	  echo '- ${{ steps.sonarcloud.outputs.url }}'
-	  echo '- ${{ steps.sonarcloud.outputs.url }}'
-	  echo '- ${{ steps.sonarcloud.outputs.url }}'
-	  echo '- ${{ steps.sonarcloud.outputs.url }}'
-	  echo '- ${{ steps.sonarcloud.outputs.url }}'
+          echo 'Created issues that must be completed to have fully working Python package:'
+	  echo '${{ steps.sonarcloud.outputs.url }}'
