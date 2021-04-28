@@ -1,8 +1,7 @@
-# .github/workflows/issue-on-push.yml
 on: [push]
-name: Create an issue on push
+name: Create issues for next steps
 jobs:
-  stuff:
+  next_steps:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,3 +11,5 @@ jobs:
         with:
           filename: .github/next_steps/01_sonarcloud_integration.md
         id: sonarcloud
+      - run: 'echo Created issue number ${{ steps.sonarcloud.outputs.number }}'
+      - run: 'echo Created ${{ steps.sonarcloud.outputs.url }}'
