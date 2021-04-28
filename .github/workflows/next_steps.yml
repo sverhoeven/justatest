@@ -5,7 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: JasonEtco/create-an-issue@v2
+      - name: Create Sonarcloud integration issue
+        uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -14,4 +15,17 @@ jobs:
       - name: List created issues
         run: |
           echo 'Created issues that must be completed to have fully working Python package:'
-          echo '${{ steps.sonarcloud.outputs.url }}'
+          echo '* ${{ steps.sonarcloud.outputs.url }}'
+          echo '* ${{ steps.sonarcloud.outputs.url }}'
+          echo '* ${{ steps.sonarcloud.outputs.url }}'
+          echo '* ${{ steps.sonarcloud.outputs.url }}'
+          echo '* ${{ steps.sonarcloud.outputs.url }}'
+          echo '* ${{ steps.sonarcloud.outputs.url }}'
+      - name: Cleanup files needed to create next steps issues
+        run: |
+          git config --global user.name 'Your Name'
+          git config --global user.email 'your-username@users.noreply.github.com'
+          git rm .github/workflows/next_steps.yml
+          git rm -r .github/next_steps
+          git commit -am "Cleanup automated next step issue generator"
+          git push
