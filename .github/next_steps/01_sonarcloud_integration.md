@@ -1,6 +1,8 @@
 ---
 title: 'Next step: Sonarcloud integration'
-labels: enhancement, actionrequired
+labels:
+  - 'enhancement' 
+  - 'action required'
 ---
 
 Continuous code quality can be handled by many services for `NLeSC/python-template` we chose [Sonarcloud](https://sonarcloud.io/).
