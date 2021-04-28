@@ -1,5 +1,5 @@
 ---
-title: Next step: Sonarcloud integration
+title: 'Next step: Sonarcloud integration'
 labels: enhancement
 ---
 
