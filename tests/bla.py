@@ -13,3 +13,11 @@ def run(args, cwd):
 def test_ver(tmp_path):
     s = run(['python3', '--version'], tmp_path)
     assert s.returncode == 0
+
+def test_ver_dot():
+    s = run(['python3', '--version'], '.')
+    assert s.returncode == 0
+
+def test_venv(tmp_path):
+    s = run(['python3', '-m', 'venv', 'env'], tmp_path)
+    assert s.returncode == 0
