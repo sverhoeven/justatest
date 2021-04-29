@@ -1,3 +1,4 @@
+import os
 import subprocess
 
 def run(args, cwd):
@@ -5,8 +6,10 @@ def run(args, cwd):
                        stdout=subprocess.PIPE,
                        stderr=subprocess.PIPE,
                        encoding="utf-8",
-                       shell=True,
                        cwd=cwd)
+    print(os.path)
+    print(os.environ['PATH'])
+    print(os.getcwd())
     print(s.stdout)
     print(s.stderr)
     return s
