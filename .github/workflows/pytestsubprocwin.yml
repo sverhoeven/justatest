@@ -24,7 +24,7 @@ jobs:
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install pytest
     - name: venv
-      run: python3 -m venv env
+      run: python3 -v -m venv env
     - name: Run pytest
       run: |
         pytest tests/bla.py
