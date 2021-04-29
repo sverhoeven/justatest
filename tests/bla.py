@@ -5,6 +5,7 @@ def run(args, cwd):
                        stdout=subprocess.PIPE,
                        stderr=subprocess.PIPE,
                        encoding="utf-8",
+                       shell=True,
                        cwd=cwd)
     print(s.stdout)
     print(s.stderr)
